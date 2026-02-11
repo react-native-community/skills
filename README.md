@@ -26,6 +26,13 @@ https://github.com/react-native-community/skills.git
 
 Skills are auto-discovered by Cursor based on their descriptions.
 
+### Codex
+
+Codex discovers skills from `AGENTS.md` in the repository root.
+
+1. Open this repository in Codex.
+2. Ask Codex to use the `upgrade-react-native` skill when upgrading a project.
+
 ### Other agents
 
 ```sh
