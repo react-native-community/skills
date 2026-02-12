@@ -14,6 +14,13 @@ Upgrade a React Native Community CLI project to a target version by fetching
 and applying the diff from the
 [React Native Upgrade Helper](https://react-native-community.github.io/upgrade-helper/).
 
+<!-- LLM_EXCLUDE: Human-only context below -->
+> [!Note]
+> **Expo users:** For Expo projects or more complex upgrade scenarios, try:
+> - [expo/skills/upgrading-expo](https://skills.sh/expo/skills/upgrading-expo)
+> - [callstackincubator/agent-skills/upgrading-react-native](https://skills.sh/callstackincubator/agent-skills/upgrading-react-native)
+<!-- /LLM_EXCLUDE -->
+
 ## Invocation
 
 ```
