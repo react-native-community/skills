@@ -6,6 +6,7 @@ Agent Skills for React Native Community CLI projects.
 
 | Skill | Description |
 |-------|-------------|
+| [migrate-to-strict-api](./migrate-to-strict-api/) | Migrate to the Strict TypeScript API (React Native 0.80+) |
 | [upgrade-react-native](./upgrade-react-native/) | Upgrade React Native versions using the upgrade helper diff |
 
 ## Installation

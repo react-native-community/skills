@@ -8,6 +8,11 @@
   },
   "skills": [
     {
+      "name": "migrate-to-strict-api",
+      "source": "./migrate-to-strict-api",
+      "description": "Use when migrating a React Native project to the Strict TypeScript API — the default JavaScript API from React Native 0.87, available as an opt-in preview since 0.80. Handles tsconfig.json setup, dependency updates, rewriting deep imports to root imports, and resolving breaking type changes. Invoke with `/migrate-to-strict-api`."
+    },
+    {
       "name": "upgrade-react-native",
       "source": "./upgrade-react-native",
       "description": "Upgrade React Native versions in Community CLI projects using the upgrade helper diff."

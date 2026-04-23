@@ -162,7 +162,18 @@ Present all proposed dependency bumps alongside the diff-based changes in step 5
 
 Apply these version bumps to `package.json` as part of step 6.
 
-### 8. Post-upgrade checklist
+### 8. Migrate to the Strict TypeScript API (target >= 0.87)
+
+React Native 0.87 makes the [Strict TypeScript API](https://reactnative.dev/docs/strict-typescript-api) the default. When the upgrade crosses this boundary (current version < 0.87, target >= 0.87) and the project uses TypeScript (a `tsconfig.json` exists), type-checking of the project is affected and this step is **required** — do not silently skip it.
+
+Ask the user which they prefer:
+
+1. **Migrate now (recommended)** — run the [`migrate-to-strict-api`](https://skills.sh/react-native-community/skills/migrate-to-strict-api) skill (`/migrate-to-strict-api`), which handles dependency compatibility, deep import rewriting, and known breaking type changes.
+2. **Defer with the temporary opt-out** — add `"customConditions": ["react-native", "react-native-legacy-deep-imports"]` to `compilerOptions` in `tsconfig.json`, keeping both entries. Tell the user this opt-out is temporary and due for removal in a future release.
+
+For target versions below 0.87, or projects without TypeScript, skip this step and do not suggest the migration unprompted.
+
+### 9. Post-upgrade checklist
 
 After applying all changes, present the user with a checklist:
 
@@ -173,6 +184,7 @@ After applying all changes, present the user with a checklist:
 - [ ] Run a clean build for iOS: `cd ios && xcodebuild clean`
 - [ ] Run the app on both platforms to verify it launches
 - [ ] Run the project's test suite
+- [ ] (TypeScript, target >= 0.87) Run `npx tsc --noEmit` to confirm the Strict TypeScript API migration or opt-out from step 8
 - [ ] Review any conflict resolutions for correctness
 - [ ] Check the [React Native changelog](https://github.com/facebook/react-native/blob/main/CHANGELOG.md) for additional breaking changes
 - [ ] Check the [Upgrade Helper web UI](https://react-native-community.github.io/upgrade-helper/?from=<currentVersion>&to=<targetVersion>) for any supplementary notes
@@ -183,3 +195,5 @@ Consult these for version-specific migration guidance:
 
 - [references/upgrade-helper-api.md](./references/upgrade-helper-api.md) — How
   to fetch diffs and version lists programmatically
+- [migrate-to-strict-api](https://skills.sh/react-native-community/skills/migrate-to-strict-api) —
+  Companion skill for the Strict TypeScript API migration (default from 0.87)
