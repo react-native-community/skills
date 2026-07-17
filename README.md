@@ -1,4 +1,4 @@
-# react-native-community/skills (experimental)
+# react-native-community/skills
 
 Agent Skills for React Native Community CLI projects.
 
